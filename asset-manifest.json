@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/KosmarasP/KP_Portfolio/static/css/main.fc9a7f2d.css",
+    "main.js": "/KosmarasP/KP_Portfolio/static/js/main.dc38acbb.js",
+    "index.html": "/KosmarasP/KP_Portfolio/index.html",
+    "main.fc9a7f2d.css.map": "/KosmarasP/KP_Portfolio/static/css/main.fc9a7f2d.css.map",
+    "main.dc38acbb.js.map": "/KosmarasP/KP_Portfolio/static/js/main.dc38acbb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fc9a7f2d.css",
+    "static/js/main.dc38acbb.js"
+  ]
+}
