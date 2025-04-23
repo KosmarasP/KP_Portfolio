@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/KosmarasP/KP_Portfolio/static/css/main.fc9a7f2d.css",
-    "main.js": "/KosmarasP/KP_Portfolio/static/js/main.dc38acbb.js",
-    "index.html": "/KosmarasP/KP_Portfolio/index.html",
-    "main.fc9a7f2d.css.map": "/KosmarasP/KP_Portfolio/static/css/main.fc9a7f2d.css.map",
-    "main.dc38acbb.js.map": "/KosmarasP/KP_Portfolio/static/js/main.dc38acbb.js.map"
+    "main.css": "/KosmarasP/github.io/KP_Portfolio/static/css/main.fc9a7f2d.css",
+    "main.js": "/KosmarasP/github.io/KP_Portfolio/static/js/main.5cc34691.js",
+    "index.html": "/KosmarasP/github.io/KP_Portfolio/index.html",
+    "main.fc9a7f2d.css.map": "/KosmarasP/github.io/KP_Portfolio/static/css/main.fc9a7f2d.css.map",
+    "main.5cc34691.js.map": "/KosmarasP/github.io/KP_Portfolio/static/js/main.5cc34691.js.map"
   },
   "entrypoints": [
     "static/css/main.fc9a7f2d.css",
-    "static/js/main.dc38acbb.js"
+    "static/js/main.5cc34691.js"
   ]
 }
