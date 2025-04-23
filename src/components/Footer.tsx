@@ -1,7 +1,7 @@
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa'; // Import LinkedIn and GitHub from react-icons
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa'; 
+import { Link } from 'react-router-dom'; 
 
 const Footer = () => {
   return (
@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 mt-2">
         {/* Section: Let's Connect */}
         <div className="text-center mb-3">
-          <h2 className="text-lg font-semibold text-white mb-1">Let’s Connect</h2>
+          <h2 className="text-lg font-semibold text-white mb-1">Let’s Connecttttttttt</h2>
           <p className="text-sm text-gray-300 max-w-md mx-auto">
             I'm always open to new opportunities or collaboration. Reach out to me!
           </p>
