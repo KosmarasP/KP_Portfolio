@@ -6,7 +6,7 @@
 .animate-infinite-scroll {
     display: flex;
     gap: 20px;
-    animation: scrollLeft 10s linear infinite;
+    animation: scrollLeft 20s linear infinite;
   }
 
   @keyframes scrollLeft {
