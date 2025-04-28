@@ -94,18 +94,18 @@ const skillCategories = [
   },
 ];
 
-const Activities = () => {
+const Services = () => {
   const [viewRef, isInView] = useVisibility({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="pt-16">
-      <section className="py-16 bg-black relative overflow-hidden" ref={viewRef}>
+    <div className="">
+      <section className="py-24 bg-black relative overflow-hidden" ref={viewRef}>
 
         {/* 🔄 Background GIF Layer */}
         <div
           className="absolute inset-0 z-0 pointer-events-none"
           style={{
-            backgroundImage: `url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDJieDNvNTI4Y2c0Zmd6dzNnemtyOXNwdWFybDV0bXd3dnVxNGp2OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kDkNFlVyQXfSNSv1AE/giphy.gif')`,
+            backgroundImage: `url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGVoMnlqc3p3cG8ycWc2cDY3d29qcmlqb3NpNnZoMnRnanFyaDA1biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ov9jQWd5qhiUSPDri/giphy.gif')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             opacity: 0.2,
@@ -114,6 +114,18 @@ const Activities = () => {
 
         {/* 🔘 Content (Unchanged) */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Title for the section */}
+          <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.2 }}
+                    transition={{ duration: 1.2, ease: "easeOut" }}
+            className="text-3xl md:text-4xl font-bold text-center text-white mb-12"
+          >
+            Services
+          </motion.div>
+
+          {/* Skill Categories */}
           <div className="flex flex-wrap justify-center gap-6 px-2">
             {skillCategories.map((block, i) => (
               <motion.div
@@ -157,48 +169,10 @@ const Activities = () => {
             ))}
           </div>
         </div>
-      </section>
 
-
-
-      <section className="bg-gray-950 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">My Work Process</h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              A streamlined process to deliver high-quality solutions every time.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[ 
-              { icon: <FaRegLightbulb className="w-8 h-8" />, title: 'Planning', description: 'We strategize and create actionable plans to meet project goals effectively.' },
-              { icon: <PiStrategyDuotone className="w-8 h-8" />, title: 'Consultation', description: 'Engaging in discussions with clients to understand requirements and offer advice.' },
-              { icon: <IoMdCodeWorking className="w-8 h-8" />, title: 'Development', description: 'This is where the technical magic happens, transforming ideas into working solutions.' },
-              { icon: <CiBookmarkCheck className="w-8 h-8" />, title: 'Delivery', description: 'Delivering the final product after thorough testing and adjustments.' },
-            ].map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                className="flex flex-col items-center text-center p-6 bg-gray-900 rounded-2xl shadow-lg"
-              >
-                <div className="mb-4 text-white">{step.icon}</div>
-                <h3 className="text-xl font-semibold text-white">{step.title}</h3>
-                <p className="text-sm text-gray-400 mt-2">{step.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </section>
     </div>
   );
 };
 
-export default Activities;
+export default Services;

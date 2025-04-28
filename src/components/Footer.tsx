@@ -69,13 +69,11 @@ const Footer = () => {
         <div className="text-center mt-4 py-3 bg-gray-950 rounded-lg">
           <h3 className="text-md font-semibold text-white mb-1">Let's Work Together!</h3>
           <p className="text-gray-300 mb-2">I’m excited to work on your next project!</p>
-          <Link
-            to="/contact" // Link now directs to the Contact page
-            className="bg-blue-500 text-white py-1 px-3 rounded-md text-sm font-semibold hover:bg-blue-600 transition duration-200"
-          >
+          <span className="bg-blue-500 text-white py-1 px-3 rounded-md text-sm font-semibold hover:bg-blue-600 transition duration-200 cursor-pointer">
             Get in Touch
-          </Link>
+          </span>
         </div>
+
       </div>
 
       {/* Section: Footer Bottom */}

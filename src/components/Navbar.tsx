@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
-  const location = useLocation();
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -28,12 +25,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/activities', label: 'Services' },
-    { path: '/Projects', label: 'Projects' },
-    { path: '/contact', label: 'Contact' },
-  ];
+  const handleScrollTo = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      setIsOpen(false); // Close the mobile menu before scrolling
+      setTimeout(() => {
+        window.scrollTo({
+          top: section.offsetTop,
+          behavior: 'smooth',
+        });
+      }, 300); // Delay the scroll to ensure menu closes first
+    }
+  };
 
   return (
     <motion.nav
@@ -45,44 +48,77 @@ const Navbar = () => {
       <div className="max-w-[75vw] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 rounded-none md:rounded-3xl text-white px-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group" aria-label="Homepage">
+          <div className="flex items-center space-x-2 group flex-grow justify-center md:justify-start" aria-label="Homepage">
             <motion.div whileHover={{ rotate: 360 }} transition={{ duration: 0.5 }}>
               {/* Add the logo image */}
               <img src={`${process.env.PUBLIC_URL}/KPLOGO3.png`} alt="Logo" className="h-16 w-16" />
             </motion.div>
             <span className="text-xl font-bold text-white">
-              <span className="text-gray-600"> Portfolio</span>
-            </span>
-          </Link>
-
-          {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`relative text-white hover:text-gray-600 transition group ${
-                  location.pathname === link.path ? 'text-gray-600' : ''
-                }`}
+              <span
+                className="text-gray-600 cursor-pointer"
+                onClick={() => handleScrollTo('home')}
               >
-                {link.label}
-                <motion.div
-                  className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-600 group-hover:w-full"
-                  whileHover={{ width: '100%' }}
-                  transition={{ duration: 0.3 }}
-                />
-              </Link>
-            ))}
+                Portfolio
+              </span>
+            </span>
+          </div>
+
+          {/* Desktop Buttons */}
+          <div className="hidden md:flex items-center space-x-8">
+            <button
+              onClick={() => handleScrollTo('home')}
+              className={`relative text-white hover:text-gray-600 transition group`}
+            >
+              Home
+              <motion.div
+                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-600 group-hover:w-full"
+                whileHover={{ width: '100%' }}
+                transition={{ duration: 0.3 }}
+              />
+            </button>
+            <button
+              onClick={() => handleScrollTo('services')}
+              className={`relative text-white hover:text-gray-600 transition group`}
+            >
+              Services
+              <motion.div
+                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-600 group-hover:w-full"
+                whileHover={{ width: '100%' }}
+                transition={{ duration: 0.3 }}
+              />
+            </button>
+            <button
+              onClick={() => handleScrollTo('projects')}
+              className={`relative text-white hover:text-gray-600 transition group`}
+            >
+              Projects
+              <motion.div
+                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-600 group-hover:w-full"
+                whileHover={{ width: '100%' }}
+                transition={{ duration: 0.3 }}
+              />
+            </button>
+            <button
+              onClick={() => handleScrollTo('contact')}
+              className={`relative text-white hover:text-gray-600 transition group`}
+            >
+              Contact
+              <motion.div
+                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-600 group-hover:w-full"
+                whileHover={{ width: '100%' }}
+                transition={{ duration: 0.3 }}
+              />
+            </button>
           </div>
 
           {/* Mobile Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-gray-600 focus:outline-none"
+              className="text-white hover:text-gray-600 focus:outline-none text-4xl" // Increased icon size
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? <span className="h-8 w-8">X</span> : <span className="h-8 w-8">≡</span>} {/* Larger menu icon */}
             </button>
           </div>
         </div>
@@ -98,20 +134,30 @@ const Navbar = () => {
             className="md:hidden bg-black px-4 pb-4"
           >
             <div className="pt-4 space-y-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                    location.pathname === link.path
-                      ? 'text-gray-600'
-                      : 'text-white hover:text-gray-600'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              <button
+                onClick={() => handleScrollTo('home')}
+                className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-600"
+              >
+                Home
+              </button>
+              <button
+                onClick={() => handleScrollTo('services')}
+                className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-600"
+              >
+                Services
+              </button>
+              <button
+                onClick={() => handleScrollTo('projects')}
+                className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-600"
+              >
+                Projects
+              </button>
+              <button
+                onClick={() => handleScrollTo('contact')}
+                className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-600"
+              >
+                Contact
+              </button>
             </div>
           </motion.div>
         )}

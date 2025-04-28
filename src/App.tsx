@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Navbar from './components/Navbar.tsx';
 import Footer from './components/Footer.tsx';
 import Home from './pages/Home.tsx';
-import Activities from './pages/Services.tsx';
+import Services from './pages/Services.tsx';
 import Projects from './pages/Projects.tsx';
 import Contact from './pages/Contact.tsx';
 
@@ -26,7 +26,7 @@ function App() {
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/activities" element={<Activities />} />
+            <Route path="/Services" element={<Services />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

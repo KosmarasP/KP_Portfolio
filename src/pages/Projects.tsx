@@ -4,13 +4,20 @@ import { useInView } from 'react-intersection-observer';
 import { Code, Layers, Server, Zap, Award } from 'lucide-react';
 import CountUp from 'react-countup';
 
+import { CiBookmarkCheck } from 'react-icons/ci';
+import { FaRegLightbulb } from 'react-icons/fa';  // Import new icon for Planning
+import { PiStrategyDuotone } from "react-icons/pi";
+import {IoMdCodeWorking,} from 'react-icons/io';
+
 // Reference images directly from the public directory
 const herobackground = '/images/wallpaperhero.jpg';
-const ecommerceImage = '/images/turbotechbgimage.jpg';
+const ecommerceImage = '/images/bgturbotech.png';
+const dashboardImage = '/images/bgadminturbotech.png';
+const museumImage = '/images/bgmuseum.png';
+const VHDLImage = '/images/bgvhdl.png';
 const portfolioImage = '/images/portfoliobgimage.png';
-const dashboardImage = '/images/adminbgimage.jpg';
-const museumImage = '/images/museum.jpg';
-const jobappImage = '/images/jobapp.jpg';
+const EduplanImage = '/images/bgeduplan.png';
+const realestateImage = '/images/bgrealestate.png';
 
 const Projects = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -33,7 +40,7 @@ const Projects = () => {
       stats: { duration: "2 months", repo: "Private" }
     },
     {
-      title: "Art Gallery Virtual Museum on Unreal Engine",
+      title: "Virtual Museum on UE4",
       category: "Interactive Simulation",
       image: museumImage,
       description: "An immersive 3D museum with free movement, interactive NPC dialogs, and engaging AI behaviors built in Unreal Engine.",
@@ -43,7 +50,7 @@ const Projects = () => {
     {
       title: "Eduplan Learning App",
       category: "Desktop Application",
-      image: jobappImage,
+      image: EduplanImage,
       description: "A C# desktop application designed for learning C# with structured lessons, quizzes, video content, and interactive exercises.",
       techStack: ["C#", ".NET", "WPF"],
       stats: { duration: "2 weeks", repo: "Private" }
@@ -59,11 +66,19 @@ const Projects = () => {
     {
       title: "Digital Systems Design",
       category: "Hardware Design",
-      image: jobappImage,
+      image: VHDLImage,
       description: "A VHDL-based digital design project featuring modules like register file, control units, and testbenches.",
       techStack: ["VHDL", "ModelSim", "Testbench"],
       stats: { duration: "1 week", repo: "Private" }
-    }
+    },
+    {
+      title: "Property Purchase Process",
+      category: "Real Estate",
+      image: realestateImage,
+      description: "A guide to purchasing property through a real estate agency, covering key steps and essential info.",
+      techStack: ["UML", "IDEF3", "ER Diagram", "Transactions"],
+      stats: { duration: "1 week", repo: "Private" }
+    },
   ];
   
   const stats = [
@@ -75,21 +90,26 @@ const Projects = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="">
       {/* Hero */}
-      <section className="relative h-[40vh] flex items-center">
+      <section className="relative h-[50vh] flex items-center">
         <div className="absolute inset-0">
           <img
             src={herobackground}
             alt="Hero"
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-black/70" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }}>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          >
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               My <span className="text-blue-500">Work</span>
             </h1>
             <p className="text-xl text-gray-300">
@@ -102,7 +122,7 @@ const Projects = () => {
       {/* Stats */}
       <section className="py-12 bg-gray-950" ref={ref}>
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
             {stats.map((item, idx) => (
               <motion.div
                 key={idx}
@@ -125,7 +145,7 @@ const Projects = () => {
       {/* Projects */}
       <section className="py-20 bg-gray-950">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
@@ -177,9 +197,101 @@ const Projects = () => {
                 </div>
               </motion.div>
             ))}
-
           </div>
         </div>
+      </section>
+
+
+      {/* Work Process*/}
+      <section className="bg-gray-950 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            My Work Process
+            <motion.span
+              className="block h-[2px] bg-blue-500 mt-2 mx-auto"
+              initial={{ width: "0%" }}
+              whileInView={{ width: "50%" }} // Adjust this width as needed
+              transition={{ duration: 1, ease: "easeOut" }}
+            />
+          </h2>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            A streamlined process to deliver high-quality solutions every time.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 xs:grid-cols-2 gap-8">
+          {[
+            { icon: <FaRegLightbulb className="w-8 h-8" />, title: 'Planning', description: 'We strategize and create actionable plans to meet project goals effectively.' },
+            { icon: <PiStrategyDuotone className="w-8 h-8" />, title: 'Consultation', description: 'Engaging in discussions with clients to understand requirements and offer advice.' },
+            { icon: <IoMdCodeWorking className="w-8 h-8" />, title: 'Development', description: 'This is where the technical magic happens, transforming ideas into working solutions.' },
+            { icon: <CiBookmarkCheck className="w-8 h-8" />, title: 'Delivery', description: 'Delivering the final product after thorough testing and adjustments.' },
+          ].map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.6 }}
+              className="flex flex-col items-center text-center p-6 bg-gray-900 rounded-2xl shadow-lg"
+            >
+              <div className="mb-4 text-white">{step.icon}</div>
+              <h3 className="text-xl font-semibold text-white">{step.title}</h3>
+              <p className="text-sm text-gray-400 mt-2">{step.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      </section>
+
+      {/* Skills Section */}
+      <section
+        id="skills"
+        className="py-16 bg-cover bg-center relative"
+        style={{ backgroundImage: 'url("https://example.com/background-image.jpg")' }}
+      >
+        <div className="absolute inset-0 bg-gray-950"></div>
+        <div className="max-w-4xl mx-auto px-4 relative z-10 text-white">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="text-3xl md:text-4xl font-bold text-center mb-6"
+          >
+            Personal Skills
+            <motion.span
+              className="block h-[2px] bg-blue-500 mt-2 mx-auto"
+              initial={{ width: "0%" }}
+              whileInView={{ width: "50%" }} // A bit bigger
+              transition={{ duration: 1, ease: "easeOut" }}
+            />
+          </motion.h2>
+
+          <ul className="space-y-4 text-center text-lg sm:text-xl">
+            {[
+              "Self-Improvement, Continuous Learning",
+              "Problem-Solving, Analytical & Critical Thinking",
+              "Teamwork, Attention to Detail, Time Management",
+            ].map((skill, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+              >
+                <li className="text-gray-300">• {skill}</li>
+              </motion.div>
+            ))}
+          </ul>
+        </div>
+
       </section>
     </div>
   );
