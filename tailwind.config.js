@@ -2,8 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        jetbrains: ['"JetBrains Mono"', 'monospace'], // Add JetBrains Mono
+        comfortaa: ['"Comfortaa"', 'sans-serif'], // Add Comfortaa variable font
+      },
+    },
   },
   plugins: [],
 }
-

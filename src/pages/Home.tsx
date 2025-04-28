@@ -1,4 +1,6 @@
 import React from 'react';
+import '@fontsource-variable/jetbrains-mono'; // Import JetBrains Mono
+import '@fontsource-variable/comfortaa'; // Import Comfortaa font
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import {
@@ -68,98 +70,114 @@ const Home = () => {
   ];
 
   return (
-  <div className=" font-sans">
+  <div className=" font-jetbrains">
       {/* Hero Section */}
-    <section id="home" className="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="w-full h-full object-cover bg-fixed bg-center bg-cover opacity-30"
+      <section id="home" className="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
+        {/* Background photo */}
+        <div className="absolute inset-0">
+          <div
+            className="w-full h-full object-cover bg-fixed bg-center bg-cover opacity-30"
+            style={{
+              backgroundImage: "url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1950&q=80')",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
+        </div>
+
+        {/* 🔄 Improved Background GIF Layer */}
+        <motion.div
+          initial={{ opacity: 0, scale: 1 }}
+          animate={{ opacity: 0.25, scale: 1.05 }}
+          transition={{ duration: 4, ease: "easeOut" }}
+          className="absolute inset-0 z-0 pointer-events-none"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1950&q=80')",
+            backgroundImage: `url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGVoMnlqc3p3cG8ycWc2cDY3d29qcmlqb3NpNnZoMnRnanFyaDA1biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ov9jQWd5qhiUSPDri/giphy.gif')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            filter: 'brightness(1.5) blur(2px)',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
-      </div>
 
-      <div className="relative z-10 flex flex-col md:flex-row items-center text-white max-w-6xl w-full px-4">
-  {/* LEFT ON DESKTOP / TOP ON MOBILE: Image container */}
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false, amount: 0.2 }}
-    transition={{ delay: 0.9, duration: 1.2, ease: "easeOut" }}
-    className="mb-8 md:mb-0 md:mr-8 flex flex-col items-center justify-center"
-  >
-    {/* WRAPPER */}
-    <div className="relative w-60 h-60 md:w-[400px] md:h-[400px]">
-      {/* BORDER */}
-      <div className="absolute inset-0 m-6 rounded-full border-4 border-blue-400 pointer-events-none" />
+        {/* Foreground Content */}
+        <div className="relative z-10 flex flex-col md:flex-row items-center text-white max-w-6xl w-full px-4">
+          {/* LEFT ON DESKTOP / TOP ON MOBILE: Image container */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ delay: 0.9, duration: 1.2, ease: "easeOut" }}
+            className="mb-8 md:mb-0 md:mr-8 flex flex-col items-center justify-center"
+          >
+            {/* WRAPPER */}
+            <div className="relative w-60 h-60 md:w-[400px] md:h-[400px]">
+              {/* BORDER */}
+              <div className="absolute inset-0 m-8 rounded-full border-2 border-blue-400 pointer-events-none" />
 
-      {/* IMAGE */}
-      <div className="rounded-full overflow-hidden w-full h-full">
-        <img
-          src="/images/wp11889473-tulsa-king-wallpapers-removebg-preview.png"
-          alt="Kosmas Papadopoulos"
-          className="w-full h-full object-cover scale-110 md:scale-110 md:translate-x-[30px] md:translate-y-[-5px] transition-transform duration-500"
-        />
-      </div>
-    </div>
-  </motion.div>
+              {/* IMAGE */}
+              <div className="rounded-full overflow-hidden w-full h-full">
+                <img
+                  src="/images/wp11889473-tulsa-king-wallpapers-removebg-preview.png"
+                  alt="Kosmas Papadopoulos"
+                  className="w-full h-full object-cover scale-110 md:scale-110 md:translate-x-[30px] md:translate-y-[-5px] transition-transform duration-500"
+                />
+              </div>
+            </div>
+          </motion.div>
 
-  {/* RIGHT ON DESKTOP / BELOW ON MOBILE: Text content */}
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: false, amount: 0.2 }}
-    transition={{ duration: 1.2, ease: "easeOut" }}
-    className="md:text-left text-center md:max-w-xl"
-  >
-    <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
-      Hi, I’m <span className="text-blue-400">Kosmas Papadopoulos</span>
-    </h1>
+          {/* RIGHT ON DESKTOP / BELOW ON MOBILE: Text content */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="md:text-left text-center md:max-w-xl"
+          >
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
+              Hi, I’m <span className="text-blue-400">Kosmas Papadopoulos</span>
+            </h1>
 
-    <motion.p
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.2 }}
-      transition={{ delay: 0.3, duration: 1.2, ease: "easeOut" }}
-      className="text-xl md:text-2xl mb-8"
-    >
-      Software Engineer · Full Stack Developer · UI/UX Designer · Tech Enthusiast
-    </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ delay: 0.3, duration: 1.2, ease: "easeOut" }}
+              className="text-xl md:text-2xl mb-8"
+            >
+              Software Engineer · Full Stack Developer · UI/UX Designer · Tech Enthusiast
+            </motion.p>
 
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.2 }}
-      transition={{ delay: 0.6, duration: 1.2, ease: "easeOut" }}
-      className="flex flex-row gap-4 mt-4 items-center md:justify-start justify-center"
-    >
-      <a
-        href="https://www.linkedin.com/in/kosmas-papadopoulos-5995631b9/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-gray-800 hover:bg-gray-900 text-white rounded-lg font-medium transition duration-200 shadow-md hover:shadow-lg hover:scale-105 text-sm sm:text-base"
-      >
-        <Linkedin className="w-5 h-5" />
-        LinkedIn
-      </a>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ delay: 0.6, duration: 1.2, ease: "easeOut" }}
+              className="flex flex-row gap-4 mt-4 items-center md:justify-start justify-center"
+            >
+              <a
+                href="https://www.linkedin.com/in/kosmas-papadopoulos-5995631b9/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-gray-800 hover:bg-gray-900 text-white rounded-lg font-medium transition duration-200 shadow-md hover:shadow-lg hover:scale-105 text-sm sm:text-base"
+              >
+                <Linkedin className="w-5 h-5" />
+                LinkedIn
+              </a>
 
-      <a
-        href="https://github.com/KosmarasP"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-gray-800 hover:bg-gray-900 text-white rounded-lg font-medium transition duration-200 shadow-md hover:shadow-lg hover:scale-105 text-sm sm:text-base"
-      >
-        <Github className="w-5 h-5" />
-        GitHub
-      </a>
-    </motion.div>
-  </motion.div>
-</div>
+              <a
+                href="https://github.com/KosmarasP"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 bg-gray-800 hover:bg-gray-900 text-white rounded-lg font-medium transition duration-200 shadow-md hover:shadow-lg hover:scale-105 text-sm sm:text-base"
+              >
+                <Github className="w-5 h-5" />
+                GitHub
+              </a>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
 
-
-
-    </section>
 
     {/* OBJECTIVE */}
     <section id="objective" className="py-24 bg-gray-950">

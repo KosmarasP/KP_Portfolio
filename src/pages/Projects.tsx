@@ -56,14 +56,6 @@ const Projects = () => {
       stats: { duration: "2 weeks", repo: "Private" }
     },
     {
-      title: "Portfolio Website",
-      category: "Frontend",
-      image: portfolioImage,
-      description: "A fully responsive personal portfolio built with modern design principles, showcasing full stack and UI/UX work.",
-      techStack: ["React", "Tailwind CSS", "Framer Motion"],
-      stats: { duration: "1 week", repo: "Private" }
-    },
-    {
       title: "Digital Systems Design",
       category: "Hardware Design",
       image: VHDLImage,
@@ -79,6 +71,14 @@ const Projects = () => {
       techStack: ["UML", "IDEF3", "ER Diagram", "Transactions"],
       stats: { duration: "1 week", repo: "Private" }
     },
+    {
+      title: "Portfolio Website",
+      category: "Frontend",
+      image: portfolioImage,
+      description: "A fully responsive personal portfolio built with modern design principles, showcasing full stack and UI/UX work.",
+      techStack: ["React", "Tailwind CSS", "Framer Motion"],
+      stats: { duration: "1 week", repo: "Private" }
+    },
   ];
   
   const stats = [
@@ -90,7 +90,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="">
+    <div className="font-jetbrains">
       {/* Hero */}
       <section className="relative h-[50vh] flex items-center">
         <div className="absolute inset-0">

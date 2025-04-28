@@ -98,20 +98,8 @@ const Services = () => {
   const [viewRef, isInView] = useVisibility({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="">
-      <section className="py-24 bg-black relative overflow-hidden" ref={viewRef}>
-
-        {/* 🔄 Background GIF Layer */}
-        <div
-          className="absolute inset-0 z-0 pointer-events-none"
-          style={{
-            backgroundImage: `url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGVoMnlqc3p3cG8ycWc2cDY3d29qcmlqb3NpNnZoMnRnanFyaDA1biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ov9jQWd5qhiUSPDri/giphy.gif')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            opacity: 0.2,
-          }}
-        />
-
+    <div className="font-jetbrains">
+      <section className="py-24 bg-gray-950 relative overflow-hidden" ref={viewRef}>
         {/* 🔘 Content (Unchanged) */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Title for the section */}
