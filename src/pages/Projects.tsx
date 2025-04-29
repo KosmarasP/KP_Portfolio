@@ -19,6 +19,7 @@ const portfolioImage = '/images/portfoliobgimage.png';
 const EduplanImage = '/images/bgeduplan.png';
 const realestateImage = '/images/bgrealestate.png';
 const bgmae = '/images/bgmae.png';
+const bgelectroplanet = '/images/bgelectroplanet.png';
 
 const Projects = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -57,6 +58,22 @@ const Projects = () => {
       stats: { duration: "2 weeks", repo: "Private" }
     },
     {
+      title: "ElectroPlanet Eshop",
+      category: "Frontend UI",
+      image: bgelectroplanet,
+      description: "A full-featured, responsive e-commerce store including product galleries, reviews, and related product carousels.",
+      techStack: ["React", "Tailwind CSS"],
+      stats: { duration: "3 weeks", repo: "Private" }
+    },
+    {
+      title: "TicketMaster Desktop App",
+      category: "Java Desktop",
+      image: bgmae,
+      description: "A desktop application for booking tickets, viewing issued tickets, and checking prices and travel details.",
+      techStack: ["Java", "JavaFX", "FXML"],
+      stats: { duration: "1 month", repo: "Private" }
+    },
+    {
       title: "Digital Systems Design",
       category: "Hardware Design",
       image: VHDLImage,
@@ -71,14 +88,6 @@ const Projects = () => {
       description: "A guide to purchasing property through a real estate agency, covering key steps and essential info.",
       techStack: ["UML", "IDEF3", "ER Diagram", "Transactions"],
       stats: { duration: "1 week", repo: "Private" }
-    },
-    {
-      title: "TicketMaster Desktop App",
-      category: "Java Desktop",
-      image: bgmae,
-      description: "A desktop application for booking tickets, viewing issued tickets, and checking prices and travel details.",
-      techStack: ["Java", "JavaFX", "FXML"],
-      stats: { duration: "1 month", repo: "Private" }
     },
     {
       title: "Portfolio Website",
