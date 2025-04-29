@@ -18,6 +18,7 @@ const VHDLImage = '/images/bgvhdl.png';
 const portfolioImage = '/images/portfoliobgimage.png';
 const EduplanImage = '/images/bgeduplan.png';
 const realestateImage = '/images/bgrealestate.png';
+const bgmae = '/images/bgmae.png';
 
 const Projects = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -51,7 +52,7 @@ const Projects = () => {
       title: "Eduplan Learning App",
       category: "Desktop Application",
       image: EduplanImage,
-      description: "A C# desktop application designed for learning C# with structured lessons, quizzes, video content, and interactive exercises.",
+      description: "A C# desktop application designed for learning C# with structured lessons, quizzes, video content, and exercises.",
       techStack: ["C#", ".NET", "WPF"],
       stats: { duration: "2 weeks", repo: "Private" }
     },
@@ -70,6 +71,14 @@ const Projects = () => {
       description: "A guide to purchasing property through a real estate agency, covering key steps and essential info.",
       techStack: ["UML", "IDEF3", "ER Diagram", "Transactions"],
       stats: { duration: "1 week", repo: "Private" }
+    },
+    {
+      title: "TicketMaster Desktop App",
+      category: "Java Desktop",
+      image: bgmae,
+      description: "A desktop application for booking tickets, viewing issued tickets, and checking prices and travel details.",
+      techStack: ["Java", "JavaFX", "FXML"],
+      stats: { duration: "1 month", repo: "Private" }
     },
     {
       title: "Portfolio Website",
