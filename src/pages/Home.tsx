@@ -17,8 +17,7 @@ import {
   Globe,
 } from 'lucide-react';
 import { LiaSchoolSolid } from 'react-icons/lia';
-import { GraduationCap, Rocket, Github, Linkedin } from 'lucide-react';
-import { Mail, MapPin, Phone } from "lucide-react";
+import { GraduationCap, Rocket, Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import Services from '../pages/Services.tsx';
 import Projects from '../pages/Projects.tsx';
 import Contact from '../pages/Contact.tsx';
@@ -110,7 +109,7 @@ const Home = () => {
             className="mb-8 md:mb-0 md:mr-8 flex flex-col items-center justify-center"
           >
             {/* WRAPPER */}
-            <div className="relative w-60 h-60 md:w-[400px] md:h-[400px]">
+            <div className="relative w-60 h-60 md:w-[400px] md:h-[400px] flex flex-col items-center">
               {/* BORDER */}
               <div className="absolute inset-0 m-8 rounded-full border-2 border-blue-400 pointer-events-none" />
 
@@ -122,6 +121,17 @@ const Home = () => {
                   className="w-full h-full object-cover scale-110 md:scale-110 md:translate-x-[30px] md:translate-y-[-5px] transition-transform duration-500"
                 />
               </div>
+
+              {/* DOWNLOAD CV BUTTON */}
+              <a
+                href="/cv/KosmasPapadopoulos_CV.pdf"
+                download
+                className="mt-6 inline-block bg-blue-500 text-white rounded-lg font-medium shadow-md hover:bg-blue-600 hover:shadow-lg hover:scale-105 
+                  text-xs sm:text-sm md:text-base lg:text-sm 
+                  px-3 py-1 sm:px-4 sm:py-2 md:px-5 md:py-3 lg:px-4 lg:py-2"
+              >
+                Download My CV
+              </a>
             </div>
           </motion.div>
 
