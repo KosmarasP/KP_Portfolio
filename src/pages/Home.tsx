@@ -109,16 +109,16 @@ const Home = () => {
             className="mb-8 md:mb-0 md:mr-8 flex flex-col items-center justify-center"
           >
             {/* WRAPPER */}
-            <div className="relative w-60 h-60 md:w-[400px] md:h-[400px] flex flex-col items-center">
-              {/* BORDER */}
-              <div className="absolute inset-0 m-8 rounded-full border-2 border-blue-400 pointer-events-none" />
+            <div className="relative w-55 h-60 md:w-[400px] md:h-[450px] flex flex-col items-center">
+              {/* SOFT GLOW BACKGROUND */}
+              <div className="absolute inset-0 z-0 rounded-[9999px] bg-blue-400/20 blur-lg scale-105" />
 
-              {/* IMAGE */}
-              <div className="rounded-full overflow-hidden w-full h-full">
+              {/* IMAGE CONTAINER */}
+              <div className="relative z-10 w-full h-full rounded-[9999px] overflow-hidden shadow-xl shadow-blue-200/20">
                 <img
-                  src="/images/wp11889473-tulsa-king-wallpapers-removebg-preview.png"
+                  src="/images/vg2.png"
                   alt="Kosmas Papadopoulos"
-                  className="w-full h-full object-cover scale-110 md:scale-110 md:translate-x-[30px] md:translate-y-[-5px] transition-transform duration-500"
+                  className="w-full h-full object-cover scale-110 md:scale-125 md:translate-x- md:translate-y-5 transition-transform duration-700 ease-in-out"
                 />
               </div>
 
@@ -126,13 +126,26 @@ const Home = () => {
               <a
                 href="/cv/KosmasPapadopoulos_CV.pdf"
                 download
-                className="mt-6 inline-block bg-blue-500 text-white rounded-lg font-medium shadow-md hover:bg-blue-600 hover:shadow-lg hover:scale-105 
-                  text-xs sm:text-sm md:text-base lg:text-sm 
-                  px-3 py-1 sm:px-4 sm:py-2 md:px-5 md:py-3 lg:px-4 lg:py-2"
+                className="mt-6 relative z-10 inline-flex items-center gap-2 rounded-full bg-blue-500 px-5 py-2 text-white text-sm font-medium shadow-md transition-all duration-300 hover:bg-blue-600 hover:shadow-lg hover:scale-105"
               >
-                Download My CV
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 4v12"
+                  />
+                </svg>
+                Download CV
               </a>
             </div>
+
           </motion.div>
 
           {/* RIGHT ON DESKTOP / BELOW ON MOBILE: Text content */}
