@@ -100,10 +100,10 @@ const Projects = () => {
   ];
   
   const stats = [
-    { icon: <Code className="h-8 w-8 text-blue-500" />, value: 35, label: 'Projects Delivered' },
-    { icon: <Layers className="h-8 w-8 text-blue-500" />, value: 12, label: 'Tech Stacks Mastered' },
+    { icon: <Code className="h-8 w-8 text-blue-500" />, value: 10, label: 'Projects Delivered' },
+    { icon: <Layers className="h-8 w-8 text-blue-500" />, value: 15, label: 'Tech Stacks Mastered' },
     { icon: <Server className="h-8 w-8 text-blue-500" />, value: 99, label: 'Positive Feedback' },
-    { icon: <Zap className="h-8 w-8 text-blue-500" />, value: 50, label: 'Deployments Completed' },
+    { icon: <Zap className="h-8 w-8 text-blue-500" />, value: 10, label: 'Deployments Completed' },
     { icon: <Award className="h-8 w-8 text-blue-500" />, value: 5, label: 'Awards / Recognitions' }
   ];
 
