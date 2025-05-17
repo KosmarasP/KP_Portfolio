@@ -116,10 +116,11 @@ const Home = () => {
               {/* IMAGE CONTAINER */}
               <div className="relative z-10 w-full h-full rounded-[9999px] overflow-hidden shadow-xl shadow-blue-200/20">
                 <img
-                  src="/images/vg2.png"
-                  alt="Kosmas Papadopoulos"
-                  className="w-full h-full object-cover scale-110 md:scale-125 md:translate-x- md:translate-y-5 transition-transform duration-700 ease-in-out"
-                />
+  src="/images/vg2.png"
+  alt="Kosmas Papadopoulos"
+  className="w-full h-full object-cover object-top md:object-center scale-110 md:scale-125 md:translate-x-0 md:translate-y-5 transition-transform duration-700 ease-in-out"
+/>
+
               </div>
 
               {/* DOWNLOAD CV BUTTON */}
@@ -300,40 +301,22 @@ const Home = () => {
 
 
       {/* Certificates Section */}
-    <section id="certificates" className="py-24 bg-gray-950 overflow-hidden">
-      <div className=" mx-auto text-center">
+    <section id="certificates" className="py-24 bg-gray-950 overflow-hidden hidden lg:block">
+      <div className="mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex justify-center items-center gap-3 text-3xl md:text-4xl font-bold mb-14 text-white"
+          className="flex justify-center items-center gap-3 text-3xl lg:text-4xl font-bold mb-14 text-white"
         >
           Professional Certificates
         </motion.h2>
 
         <div className="relative w-full overflow-hidden">
           <div className="flex gap-6 animate-infinite-scroll">
-            {certificates.map(({ title, issuer, year, Icon }, index) => (
+            {[...certificates, ...certificates].map(({ title, issuer, year, Icon }, index) => (
               <div
                 key={index}
-                className="w-[280px] h-[270px] shrink-0 bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="relative flex items-center justify-center w-12 h-12 bg-gray-700 rounded-full mx-auto mb-4 z-10">
-                  <Icon className="h-6 w-6 text-blue-300" />
-                </div>
-                <div className="flex flex-col justify-between h-full">
-                  <h3 className="relative text-lg font-semibold text-white mb-2 z-10">{title}</h3>
-                  <p className="relative text-sm text-gray-400 z-10">
-                    Issued by <span className="text-white font-medium">{issuer}</span>
-                  </p>
-                  <p className="relative text-sm text-gray-400 z-10">{year}</p>
-                </div>
-              </div>
-            ))}
-            {/* Duplicate certificates for smooth scrolling */}
-            {certificates.map(({ title, issuer, year, Icon }, index) => (
-              <div
-                key={`duplicate-${index}`}
                 className="w-[280px] h-[270px] shrink-0 bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="relative flex items-center justify-center w-12 h-12 bg-gray-700 rounded-full mx-auto mb-4 z-10">
@@ -352,6 +335,49 @@ const Home = () => {
         </div>
       </div>
     </section>
+
+    {/* Mobile & Tablet: drag-to-scroll with 2 rows */}
+    <section className="py-24 bg-gray-950 overflow-hidden block lg:hidden">
+      <div className="mx-auto text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center items-center gap-3 text-3xl font-bold mb-14 text-white"
+        >
+          Professional Certificates
+        </motion.h2>
+
+        <div className="relative w-full overflow-hidden">
+          {/* Optional fade edges */}
+          <div className="pointer-events-none absolute top-0 left-0 w-10 h-full z-20 bg-gradient-to-r from-gray-950 to-transparent"></div>
+          <div className="pointer-events-none absolute top-0 right-0 w-10 h-full z-20 bg-gradient-to-l from-gray-950 to-transparent"></div>
+
+          <div
+            className="grid grid-rows-2 grid-flow-col gap-6 overflow-x-auto scroll-smooth scrollbar-hide px-4 cursor-grab active:cursor-grabbing"
+          >
+            {certificates.map(({ title, issuer, year, Icon }, index) => (
+              <div
+                key={index}
+                className="w-[280px] h-[270px] shrink-0 bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="relative flex items-center justify-center w-12 h-12 bg-gray-700 rounded-full mx-auto mb-4 z-10">
+                  <Icon className="h-6 w-6 text-blue-300" />
+                </div>
+                <div className="flex flex-col justify-between h-full">
+                  <h3 className="relative text-lg font-semibold text-white mb-2 z-10">{title}</h3>
+                  <p className="relative text-sm text-gray-400 z-10">
+                    Issued by <span className="text-white font-medium">{issuer}</span>
+                  </p>
+                  <p className="relative text-sm text-gray-400 z-10">{year}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
 
         <div className="font-sans">
           {/* Services Section */}
