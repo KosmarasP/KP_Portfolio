@@ -116,11 +116,10 @@ const Home = () => {
               {/* IMAGE CONTAINER */}
               <div className="relative z-10 w-full h-full rounded-[9999px] overflow-hidden shadow-xl shadow-blue-200/20">
                 <img
-  src="/images/vg2.png"
-  alt="Kosmas Papadopoulos"
-  className="w-full h-full object-cover object-top md:object-center scale-110 md:scale-125 md:translate-x-0 md:translate-y-5 transition-transform duration-700 ease-in-out"
-/>
-
+                  src="/images/vg2.png"
+                  alt="Kosmas Papadopoulos"
+                  className="w-full h-full object-cover scale-110 md:scale-125 md:translate-x- md:translate-y-5 transition-transform duration-700 ease-in-out"
+                />
               </div>
 
               {/* DOWNLOAD CV BUTTON */}
