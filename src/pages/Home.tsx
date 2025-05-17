@@ -77,11 +77,39 @@ const Home = () => {
           <div
             className="w-full h-full object-cover bg-fixed bg-center bg-cover opacity-30"
             style={{
-              backgroundImage: "url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1950&q=80')",
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1950&q=80')",
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
         </div>
+
+        {/* Scroll Down text - Top, moved higher with arrow */}
+        <motion.div
+          initial={{ opacity: 0, y: -15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2,
+            ease: "easeInOut",
+          }}
+          className="absolute top-2 left-1/2 -translate-x-1/2 text-white text-sm tracking-widest select-none pointer-events-none flex flex-col items-center"
+        >
+          <span>Scroll Down</span>
+          <motion.svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+            className="w-5 h-5 mt-1"
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </motion.svg>
+        </motion.div>
 
         {/* 🔄 Improved Background GIF Layer */}
         <motion.div
@@ -91,10 +119,10 @@ const Home = () => {
           className="absolute inset-0 z-0 pointer-events-none"
           style={{
             backgroundImage: `url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGVoMnlqc3p3cG8ycWc2cDY3d29qcmlqb3NpNnZoMnRnanFyaDA1biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ov9jQWd5qhiUSPDri/giphy.gif')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            filter: 'brightness(1.5) blur(2px)',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            filter: "brightness(1.5) blur(2px)",
           }}
         />
 
@@ -118,7 +146,7 @@ const Home = () => {
                 <img
                   src="/images/vg2.png"
                   alt="Kosmas Papadopoulos"
-                  className="w-full h-full object-cover scale-110 md:scale-125 md:translate-x- md:translate-y-5 transition-transform duration-700 ease-in-out"
+                  className="w-full h-full object-cover scale-110 md:scale-125 md:translate-x-0 md:translate-y-5 transition-transform duration-700 ease-in-out"
                 />
               </div>
 
@@ -145,7 +173,6 @@ const Home = () => {
                 Download CV
               </a>
             </div>
-
           </motion.div>
 
           {/* RIGHT ON DESKTOP / BELOW ON MOBILE: Text content */}
@@ -199,6 +226,28 @@ const Home = () => {
             </motion.div>
           </motion.div>
         </div>
+
+          {/* Scroll Down text - Bottom, with arrow */}
+          <motion.div
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center select-none pointer-events-none"
+          >
+            <span className="text-gray-300 text-md font-semibold drop-shadow-md tracking-wide select-none">
+              Scroll Down
+            </span>
+            <motion.svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+              className="w-8 h-8 mt-1 text-gray-300 drop-shadow-md"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </motion.svg>
+          </motion.div>
       </section>
 
 
